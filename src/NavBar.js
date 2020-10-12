@@ -1,0 +1,18 @@
+import React from "react";
+import 'bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+function NavBar(props) {
+  return (
+    <div>
+    <nav className="navbar navbar-light bg-primary">
+      <a className="navbar-brand" href="#">
+        <img src="./images/half-full.svg" width="30" height="30" style={{marginRight: '15px'}} className="d-inline-block align-top" alt="" loading="lazy"></img>
+          TriDri
+      </a>
+    </nav>
+    </div>
+  )
+}
+
+export default NavBar;
