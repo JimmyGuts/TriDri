@@ -1,12 +1,32 @@
-h1 {
-  color: white;
-  background-color: rgb(88, 88, 212);
-}
-
+/* Nav Bar */
 .navtext {
   color: white;
   font-size: x-large;
   font-weight: 500;
   font-family: 'Sansita Swashed', cursive;
-  align-items: center;
+}
+
+/* Login Section */
+.loginbox {
+  width: 50%;
+  margin-top: 5%;
+  border-color: #007bff;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 30px;
+}
+.loginform {
+  margin-top: 4%;
+  margin-left: 4%;
+  margin-right: 4%;
+}
+.logorsign {
+  /* text-align: center; */
+  align-content: center;
+}
+.login {
+  margin-right: 2%;
+}
+.signup {
+  margin-left: 2%;
 }
