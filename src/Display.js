@@ -9,7 +9,7 @@ function Display(props) {
     <div>
       <MainHeader state={props.state} />
 
-      <Calendar />
+      <Calendar addDrinks={props.addDrinks}/>
 
     </div>
   )

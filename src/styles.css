@@ -15,6 +15,10 @@
   border-width: 2px;
   border-radius: 30px;
 }
+.loginHeader {
+  color: white;
+  background-color: #007bff;
+}
 .loginform {
   margin-top: 4%;
   margin-left: 4%;
@@ -22,6 +26,7 @@
 }
 .logorsign {
   align-content: center;
+  /* text-align: center; */
 }
 .login {
   margin-right: 2%;
@@ -76,9 +81,12 @@
   justify-content: space-evenly;
   text-align: center;
   flex: 1 14%;
-  padding: 2px;
+  /* padding: 2px; */
   margin: 2px;
   /* min-width: 14% */
+}
+.dayHeader {
+  color: white;
 }
 .calButton {
   border-radius: 75px;

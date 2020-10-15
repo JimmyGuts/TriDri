@@ -10,7 +10,7 @@ function NavBar(props) {
         <img src="./images/half-full-white.png" width="30" height="30" style={{marginRight: '15px', marginTop: "4px"}} className="d-inline-block align-top" alt="" loading="lazy"></img>
           Tri Dri
       </a>
-      <button className="btn btn-outline-light" type="button">
+      <button className="btn btn-outline-light" type="button" onClick={props.logIn}>
         Log In
       </button>
     </nav>

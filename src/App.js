@@ -12,10 +12,10 @@ class App extends React.Component {
     this.state = {
       loggedIn: false,
       name: "Liz",
-      streak: 5,
+      streak: 3,
       drinksLeft: 5,
     }
-    this.logIn = this.logIn.bind(this);
+
   }
 
   logIn(event) {
@@ -25,14 +25,20 @@ class App extends React.Component {
     })
   }
 
+  addDrinks(number) {
+    this.setState({
+      drinksLeft: drinksLeft - number,
+    })
+  }
+
 
   render() {
     const { name } = this.props;
     return (
       <div>
-        <NavBar />
+        <NavBar logIn={this.logIn.bind(this)}/>
           {this.state.loggedIn
-          ? <Display state={this.state} />
+          ? <Display state={this.state} addDrinks={this.addDrinks.bind(this)}/>
           : <Login logIn={this.logIn.bind(this)}/>
           }
       </div>
