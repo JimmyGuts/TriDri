@@ -21,7 +21,6 @@
   margin-right: 4%;
 }
 .logorsign {
-  /* text-align: center; */
   align-content: center;
 }
 .login {
@@ -30,3 +29,61 @@
 .signup {
   margin-left: 2%;
 }
+
+/* Main Display */
+.mainDisplay {
+  display: flex;
+  flex-flow: row;
+}
+.welcomeStreak {
+  order: 1;
+  flex: 1 65%;
+}
+.drinkCircle {
+  background-color:  #007bff;
+  color: white;
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+  align-content: center;
+  height: 150px;
+  width: 150px;
+  min-height: 150px;
+  min-width: 150px;
+  max-height: 150px;
+  max-width: 150px;
+  flex: 1 35%;
+  order: 2;
+}
+.drinkNumber {
+  padding-top: 15%;
+  padding-bottom: 20%;
+  font-size: 250%;
+  margin: 1%;
+}
+
+/* Calendar */
+.calendar {
+  display: inline-flex;
+  direction: row;
+  justify-content: space-evenly;
+  width: 75%;
+  padding: 5px;
+  margin: 5px;
+
+}
+.day {
+  justify-content: space-evenly;
+  text-align: center;
+  flex: 1 14%;
+  padding: 2px;
+  margin: 2px;
+  /* min-width: 14% */
+}
+.calButton {
+  border-radius: 75px;
+  max-height: 50px;
+  max-width: 50px;
+  font-size: small;
+}
+
