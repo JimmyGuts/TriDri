@@ -94,4 +94,11 @@
   max-width: 50px;
   font-size: small;
 }
+.cardTotal {
+  text-align: center;
+  padding-top: 20%;
+}
+.progBar {
+  width: 100%;
+}
 
