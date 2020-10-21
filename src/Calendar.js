@@ -4,34 +4,27 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Calendar(props) {
 
-  const [Mon, setMon] = useState(0);
-  const [Tue, setTue] = useState(0);
-  const [Wed, setWed] = useState(0);
-  const [Thu, setThu] = useState(0);
-  const [Fri, setFri] = useState(0);
-  const [Sat, setSat] = useState(0);
-  const [Sun, setSun] = useState(0);
-
   const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
-  const stateDays = [Mon, Tue, Wed, Thu, Fri, Sat, Sun];
-  const setDays = [setMon, setTue, setWed, setThu, setFri, setSat, setSun];
-
-  const handleChange = (event, index) => {
-    // const target = event.target;
-    // const value = target.value;
-    // let dayToChange = setDays[index];
-    // dayToChange(value);
+  const stateDays = Object.keys(props.state.day)
+  const dayDrinks = [];
+  let dayFiller = (days) => {
+    days.forEach(dayNum => dayDrinks.push(props.state.day[dayNum]))
   }
+  dayFiller(stateDays);
 
-  const updateDrinks = (day, number) => {
 
-  }
+  // const handleChange = (event, index) => {
+  //   const target = event.target;
+  //   const value = target.value;
+  //   let dayToChange = setDays[index];
+  //   dayToChange(value);
+  // }
 
   const weekList = weekdays.map((weekday, index) =>
     <div class="card border-primary mb-3 day" style={{ order: index }} key={index}>
       <div class="card-header bg-primary border-success dayHeader"><h2>{weekday}</h2></div>
       <div class="card-body text-success">
-        <h5 class="card-title">{stateDays[index]}</h5>
+        <h5 class="card-title">{dayDrinks[index]}</h5>
         <button type="button" class="btn btn-primary calButton" data-toggle="modal" data-target="#logModal">Log</button>
       </div>
       <div class="modal fade" id="logModal" tabIndex="-1" role="dialog" aria-labelledby="logDrinksModal" aria-hidden="true">
@@ -47,13 +40,13 @@ function Calendar(props) {
               <form>
                 <div class="form-group">
                   <label for="numberOfDrinks"></label>
-                  <input type="number" class="form-control" id="numberOfDrinks" onChange={e => setDays[index](e.target.value)}/>
+                  <input type="number" class="form-control" id="numberOfDrinks" />
                 </div>
               </form>
             </div>
               <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                <button type="button" class="btn btn-primary" onClick={updateDrinks(stateDays[index], )}>Log</button>
+                <button type="button" class="btn btn-primary" onClick={()=>{props.updateDrinks()}}>Log</button>
               </div>
             </div>
           </div>
@@ -64,6 +57,9 @@ function Calendar(props) {
   return (
     <div class="calendar">
         {weekList}
+        <div>
+
+        </div>
       </div>
   )
 }

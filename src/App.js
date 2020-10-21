@@ -12,11 +12,24 @@ class App extends React.Component {
     this.state = {
       loggedIn: false,
       name: "Liz",
-      streak: 3,
-      drinksLeft: 5,
+      streak: 0,
+      totalDrinks: 30,
+      drinksLeft: 0,
+      day: {
+        mon: 1,
+        tue: 2,
+        wed: 3,
+        thu: 4,
+        fri: 5,
+        sat: 6,
+        sun: 7
+      },
+
     }
 
   }
+
+
 
   logIn(event) {
     event.preventDefault();
@@ -25,10 +38,30 @@ class App extends React.Component {
     })
   }
 
-  addDrinks(number) {
+  drinksLeftFill(day) {
+    let sum = 0;
+    for (let key in day) {
+      sum = sum + day[key]
+    }
     this.setState({
-      drinksLeft: drinksLeft - number,
+      drinksLeft: this.state.totalDrinks - sum
     })
+  }
+
+  componentDidMount() {
+    this.drinksLeftFill(this.state.day);
+  }
+
+
+
+
+  addDrinks(event) {
+    let target = event.target;
+    console.log(target)
+    // this.setState({
+    //   drinksLeft: drinksLeft - number,
+    //   [day]: number,
+    // })
   }
 
 
@@ -36,11 +69,14 @@ class App extends React.Component {
     const { name } = this.props;
     return (
       <div>
-        <NavBar logIn={this.logIn.bind(this)}/>
-          {this.state.loggedIn
-          ? <Display state={this.state} addDrinks={this.addDrinks.bind(this)}/>
-          : <Login logIn={this.logIn.bind(this)}/>
-          }
+        <NavBar logIn={this.logIn.bind(this)} />
+        {this.state.loggedIn
+          ? <Display
+            state={this.state}
+            addDrinks={this.addDrinks.bind(this)} />
+          : <Login
+            logIn={this.logIn.bind(this)} />
+        }
       </div>
     );
   }

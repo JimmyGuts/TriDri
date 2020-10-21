@@ -9,7 +9,9 @@ function Display(props) {
     <div>
       <MainHeader state={props.state} />
 
-      <Calendar addDrinks={props.addDrinks}/>
+      <Calendar
+        addDrinks={props.addDrinks}
+        state={props.state}/>
 
     </div>
   )
