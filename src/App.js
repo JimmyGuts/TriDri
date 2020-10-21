@@ -25,9 +25,7 @@ class App extends React.Component {
         sun: 0
       },
       sumOfDrinks: 0,
-
     }
-
   }
 
   logIn(event) {
@@ -52,15 +50,12 @@ class App extends React.Component {
     this.drinksLeftFill(this.state.day);
   }
 
-
-  addDrinks(drinks) {
-    console.log(drinks)
-    // this.setState({
-    //   drinksLeft: drinksLeft - number,
-    //   [day]: number,
-    // })
+  addDrinks(drinks, dayName) {
+    drinks = parseInt(drinks);
+    let updatedDay = { ...this.state.day, [dayName]: drinks};
+    this.setState({ day: updatedDay });
+    this.drinksLeftFill(updatedDay);
   }
-
 
   render() {
     const { name } = this.props;

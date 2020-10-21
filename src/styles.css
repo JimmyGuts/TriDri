@@ -90,8 +90,8 @@
 }
 .calButton {
   border-radius: 75px;
-  max-height: 50px;
-  max-width: 50px;
+  /* max-height: 50px;
+  max-width: 50px; */
   font-size: small;
 }
 .cardTotal {
@@ -100,5 +100,6 @@
 }
 .progBar {
   width: 100%;
+  padding-right: 2%;
 }
 
