@@ -30,8 +30,8 @@ function Calendar(props) {
         <h5 class="card-title">{dayDrinks[index]}</h5>
         <div>
           {dayDrinks[index] > 0
-          ? <button type="button" class="btn btn-primary calButton" data-toggle="modal" data-target={`#logModal${weekday}`}>Update</button>
-          : <button type="button" class="btn btn-primary calButton" data-toggle="modal" data-target={`#logModal${weekday}`}>Log</button>
+            ? <button type="button" class="btn btn-primary calButton" data-toggle="modal" data-target={`#logModal${weekday}`}>Update</button>
+            : <button type="button" class="btn btn-primary calButton" data-toggle="modal" data-target={`#logModal${weekday}`}>Log</button>
           }
         </div>
       </div>
@@ -48,7 +48,14 @@ function Calendar(props) {
               <form>
                 <div class="form-group">
                   <label for={dayDrinks[index]}></label>
-                  <input type="number" class="form-control" id={dayDrinks[index]} name={stateDays[index]} onChange={(event) => drinkLog(event)} />
+                  <div class="container-fluid">
+                    <div class="row justify-content-center">
+                      <button type="button" class="btn btn-primary drinkPlusMinus rounded-circle">-</button>
+                      <h5 class="drinkTotal">{drinks}</h5>
+                      <button type="button" class="btn btn-primary drinkPlusMinus rounded-circle">+</button>
+                    </div>
+                  </div>
+                  <input type="number" min="0" max={props.state.drinksLeft} default="0" class="form-control custom-range" id={dayDrinks[index]} name={stateDays[index]} onChange={(event) => drinkLog(event)} />
                 </div>
               </form>
             </div>

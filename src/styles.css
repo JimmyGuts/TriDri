@@ -98,6 +98,31 @@
   text-align: center;
   padding-top: 20%;
 }
+.drinkTotal {
+  /* padding-top: 5%; */
+  font-size: xx-large;
+  font-weight: bold;
+  margin: 15px 0px 15px 0px;
+  text-align: center;
+  max-height: 50px;
+  max-width: 50px;
+  min-height: 50px;
+  min-width: 50px;
+  display: block;
+  transform: translate(-50%, -50%);
+}
+.drinkPlusMinus {
+  margin: 15px;
+  max-height: 50px;
+  max-width: 50px;
+  min-height: 50px;
+  min-width: 50px;
+  font-size: xx-large;
+  font-weight: bold;
+  text-align: center;
+  transform: translate(-50%, -50%);
+
+}
 .progBar {
   width: 100%;
   padding-right: 2%;
