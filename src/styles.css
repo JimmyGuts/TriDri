@@ -40,12 +40,23 @@
   display: flex;
   flex-flow: row;
 }
+.welcomeBar {
+  color: white;
+  background-image: url('../dist/images/mtnlrg.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.welcomeMessage {
+  text-shadow: 2px 2px black;
+}
 .welcomeStreak {
   order: 1;
   flex: 1 65%;
 }
 .drinkCircle {
   background-color:  #007bff;
+  /* border-style: outset; */
+  /* box-shadow: 2px 2px black; */
   color: white;
   font-size: xx-large;
   font-weight: bold;
@@ -102,7 +113,7 @@
   /* padding-top: 5%; */
   font-size: xx-large;
   font-weight: bold;
-  margin: 15px 0px 15px 0px;
+  margin: 20px 0px 15px 0px;
   text-align: center;
   max-height: 50px;
   max-width: 50px;
@@ -112,14 +123,17 @@
   transform: translate(-50%, -50%);
 }
 .drinkPlusMinus {
-  margin: 15px;
+  margin-top: 15px;
+  /* margin-bottom: 5%; */
   max-height: 50px;
   max-width: 50px;
   min-height: 50px;
   min-width: 50px;
-  font-size: xx-large;
+  /* padding-bottom: 15px; */
+  /* font-size: xx-large; */
   font-weight: bold;
   text-align: center;
+  /* vertical-align: middle; */
   transform: translate(-50%, -50%);
 
 }

@@ -22,6 +22,24 @@ function Calendar(props) {
     setDrinks(value);
     setDayName(name);
   }
+  let drinkPlus = (event, index) => {
+    let target = event.target;
+    let name = target.name;
+    let value = drinks;
+    setDrinks(value += 1);
+    dayDrinks[index] = value += 1;
+    setDayName(name);
+  }
+  let drinkMinus = (event, index) => {
+    let target = event.target;
+    let name = target.name;
+    let value = drinks;
+    setDrinks(value -= 1)
+    setDayName(name);
+  }
+  let clearDrinks = () => {
+    setDrinks(0);
+  }
 
   const weekList = weekdays.map((weekday, index) =>
     <div class="card border-primary mb-3 day" style={{ order: index }} key={index}>
@@ -50,18 +68,22 @@ function Calendar(props) {
                   <label for={dayDrinks[index]}></label>
                   <div class="container-fluid">
                     <div class="row justify-content-center">
-                      <button type="button" class="btn btn-primary drinkPlusMinus rounded-circle">-</button>
+                      <button type="button" class="btn btn-primary drinkPlusMinus rounded-circle" name={stateDays[index]} onClick={() => drinkMinus(event)}>
+                        -
+                      </button>
                       <h5 class="drinkTotal">{drinks}</h5>
-                      <button type="button" class="btn btn-primary drinkPlusMinus rounded-circle">+</button>
+                      <button type="button" class="btn btn-primary drinkPlusMinus rounded-circle" name={stateDays[index]} onClick={() => drinkPlus(event)}>
+                        +
+                      </button>
                     </div>
                   </div>
-                  <input type="number" min="0" max={props.state.drinksLeft} default="0" class="form-control custom-range" id={dayDrinks[index]} name={stateDays[index]} onChange={(event) => drinkLog(event)} />
+                  {/* <input type="number" min="0" max={props.state.drinksLeft} default="0" class="form-control custom-range" id={dayDrinks[index]} name={stateDays[index]} onChange={(event) => drinkLog(event)} /> */}
                 </div>
               </form>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-              <button type="button" class="btn btn-primary" data-dismiss="modal" onClick={() => { props.addDrinks(drinks, dayName) }}>Log</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal" onClick={() => { props.addDrinks(drinks, dayName); clearDrinks(); }}>Log</button>
             </div>
           </div>
         </div>
