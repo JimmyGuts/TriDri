@@ -100,8 +100,9 @@ function Calendar(props) {
         <div class="calendar col-2" order={2}>
           <div class="card border-primary mb-3 day" >
             <div class="card-header bg-success border-success dayHeader"><h2>{"Total"}</h2></div>
-            <div class="card-body text-success cardTotal">
+            <div class="card-body text-success">
               <h5 class="card-title">{`${props.state.sumOfDrinks} / ${props.state.totalDrinks}`}</h5>
+              <button type="button" class="btn btn-success calButton">Submit Week</button>
             </div>
           </div>
         </div>
