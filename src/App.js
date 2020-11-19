@@ -13,7 +13,7 @@ class App extends React.Component {
       loggedIn: false,
       name: "Liz",
       streak: 0,
-      totalDrinks: 30,
+      totalDrinks: 10,
       drinksLeft: 0,
       day: {
         mon: 0,
