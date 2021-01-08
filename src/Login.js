@@ -4,6 +4,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Login(props) {
 
+  // Placeholder at the moment
+    // Will need to be updated with logic once backend is up and running
+
 
   return (
     <div>

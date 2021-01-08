@@ -2,6 +2,8 @@ import React from "react";
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Update to indicate when number of drinks is close to being reached, has been reached, and has been exceeded
+
 function MainHeader(props) {
   return (
     <div class="jumbotron jumbotron-fluid welcomeBar">

@@ -4,17 +4,23 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Calendar(props) {
 
+  // Hooks for initializing calendar with correct days, and for setting drink numbers
   const [drinks, setDrinks] = useState(0);
   const [dayName, setDayName] = useState("");
 
+  // Creation of containers for use in logic
   const weekdays = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
   const stateDays = Object.keys(props.state.day)
   const dayDrinks = [];
+
+  // Logic for initializing current drinks listed for each day
   let dayFiller = (days) => {
     days.forEach(dayNum => dayDrinks.push(props.state.day[dayNum]))
   }
   dayFiller(stateDays);
 
+  // Logic for logging drinks
+  // Need to update / implement testing for negatives
   let drinkLog = (event) => {
     let target = event.target;
     let name = target.name;
@@ -40,6 +46,9 @@ function Calendar(props) {
   let clearDrinks = () => {
     setDrinks(0);
   }
+
+  // This needs to be refactored, seperate concerns and update how conditional rendering is currently working
+    // Implement success / failure coloring
 
   const weekList = weekdays.map((weekday, index) =>
     <div class="card border-primary mb-3 day" style={{ order: index }} key={index}>

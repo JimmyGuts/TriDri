@@ -2,6 +2,8 @@ import React from "react";
 import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+// Components need logic, placeholder for now
+
 function NavBar(props) {
   return (
     <div>

@@ -28,6 +28,7 @@ class App extends React.Component {
     }
   }
 
+  // Placeholder login event, will need to be updated once backend built out
   logIn(event) {
     event.preventDefault();
     this.setState({
@@ -35,6 +36,7 @@ class App extends React.Component {
     })
   }
 
+  // Logic for setting remaining drinks for the week
   drinksLeftFill(day) {
     let sum = 0;
     for (let key in day) {
@@ -46,10 +48,12 @@ class App extends React.Component {
     })
   }
 
+  // Initial loadup
   componentDidMount() {
     this.drinksLeftFill(this.state.day);
   }
 
+  // Drink addition update state logic
   addDrinks(drinks, dayName) {
     drinks = parseInt(drinks);
     let updatedDay = { ...this.state.day, [dayName]: drinks};
