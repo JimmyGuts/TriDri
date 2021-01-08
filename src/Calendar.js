@@ -32,7 +32,6 @@ function Calendar(props) {
     let target = event.target;
     let name = target.name;
     let value = drinks;
-    // let value = dayDrinks[index];
     setDrinks(value += 1);
     dayDrinks[index] = value += 1;
     setDayName(name);
@@ -41,7 +40,6 @@ function Calendar(props) {
     let target = event.target;
     let name = target.name;
     let value = drinks;
-    // let value = dayDrinks[index];
     if (drinks - 1 >= 0) {
       setDrinks(value -= 1)
       setDayName(name);
